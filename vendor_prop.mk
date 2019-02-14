@@ -200,6 +200,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi \
     vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,com.qualcomm.qti.qmmi
 
+#Fix Camera for hal1 apps like whatsapp
+PRODUCT_PROPERTY_OVERRIDES += \
+    vendor.camera.hal1.packagelist=com.whatsapp
+
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \
     sys.vendor.shutdown.waittime=500
