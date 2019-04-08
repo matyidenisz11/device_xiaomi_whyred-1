@@ -257,7 +257,7 @@ function configure_read_ahead_kb_values() {
     MemTotal=${MemTotalStr:16:8}
 
     # Set 128 for <= 3GB &
-    # set 512 for >= 4GB targets.
+    # set 128 for >= 4GB targets.
     if [ $MemTotal -le 3145728 ]; then
         echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
         echo 128 > /sys/block/mmcblk0/queue/read_ahead_kb
@@ -266,12 +266,12 @@ function configure_read_ahead_kb_values() {
         echo 128 > /sys/block/dm-0/queue/read_ahead_kb
         echo 128 > /sys/block/dm-1/queue/read_ahead_kb
     else
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0/queue/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
-        echo 512 > /sys/block/dm-0/queue/read_ahead_kb
-        echo 512 > /sys/block/dm-1/queue/read_ahead_kb
+        echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
+        echo 128 > /sys/block/mmcblk0/queue/read_ahead_kb
+        echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
+        echo 128 > /sys/block/mmcblk0rpmb/queue/read_ahead_kb
+        echo 128 > /sys/block/dm-0/queue/read_ahead_kb
+        echo 128 > /sys/block/dm-1/queue/read_ahead_kb
     fi
 }
 
@@ -424,9 +424,9 @@ else
     fi
 
     # Set allocstall_threshold to 0 for all targets.
-    # Set swappiness to 100 for all targets
+    # Set swappiness to 35 for all targets
     echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
-    echo 100 > /proc/sys/vm/swappiness
+    echo 35 > /proc/sys/vm/swappiness
 
     configure_zram_parameters
 
