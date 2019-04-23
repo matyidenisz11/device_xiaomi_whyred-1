@@ -244,8 +244,8 @@ function configure_zram_parameters() {
         elif [ $MemTotal -le 1048576 ]; then
             echo 805306368 > /sys/block/zram0/disksize
         else
-            # Set Zram disk size=1GB for >=2GB Non-Go targets.
-            echo 1073741824 > /sys/block/zram0/disksize
+            # Set Zram disk size=768MB for >=2GB Non-Go targets.
+            echo 805306368 > /sys/block/zram0/disksize
         fi
         mkswap /dev/block/zram0
         swapon /dev/block/zram0 -p 32758
@@ -335,7 +335,7 @@ if [ "$ProductName" == "msmnile" ]; then
       configure_zram_parameters
       configure_read_ahead_kb_values
       echo 0 > /proc/sys/vm/page-cluster
-      echo 35 > /proc/sys/vm/swappiness
+      echo 30 > /proc/sys/vm/swappiness
 else
     arch_type=`uname -m`
     MemTotalStr=`cat /proc/meminfo | grep MemTotal`
@@ -432,9 +432,9 @@ else
     fi
 
     # Set allocstall_threshold to 0 for all targets.
-    # Set swappiness to 35 for all targets
+    # Set swappiness to 30 for all targets
     echo 0 > /sys/module/vmpressure/parameters/allocstall_threshold
-    echo 35 > /proc/sys/vm/swappiness
+    echo 30 > /proc/sys/vm/swappiness
 
     configure_zram_parameters
 
