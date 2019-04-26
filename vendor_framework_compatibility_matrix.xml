@@ -488,10 +488,10 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.mokee.power</name>
+        <name>vendor.lineage.power</name>
         <version>1.0</version>
         <interface>
-            <name>IMoKeePower</name>
+            <name>ILineagePower</name>
             <instance>default</instance>
         </interface>
     </hal>
