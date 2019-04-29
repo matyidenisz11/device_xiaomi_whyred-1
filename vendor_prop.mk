@@ -203,7 +203,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 #Fix Camera for hal1 apps like whatsapp
 PRODUCT_PROPERTY_OVERRIDES += \
-    vendor.camera.hal1.packagelist=com.whatsapp,com.instagram.android
+    camera.hal1.packagelist=com.whatsapp,com.instagram.android,com.snapchat.android
 
 # Boot
 PRODUCT_PROPERTY_OVERRIDES += \
