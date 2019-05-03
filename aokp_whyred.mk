@@ -27,7 +27,7 @@ $(call inherit-product, device/xiaomi/whyred/device.mk)
 # Inherit some common AOKP stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
-$(call inherit-product, vendor/aokp/config/common_full_phone.mk)
+$(call inherit-product, vendor/aokp/configs/common_full_phone.mk)
 
 PRODUCT_NAME := aokp_whyred
 PRODUCT_BRAND := Xiaomi
