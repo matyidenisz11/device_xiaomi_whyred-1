@@ -1,0 +1,2 @@
+allow platform_app boottime_prop:file {read};
+allow platform_app cnd_vendor_prop:file {read};
