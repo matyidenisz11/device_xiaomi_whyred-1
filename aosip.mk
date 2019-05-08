@@ -24,9 +24,16 @@ $(call inherit-product-if-exists, vendor/xiaomi/Gcam/config.mk)
 # Inherit from whyred device
 $(call inherit-product, device/xiaomi/whyred/device.mk)
 
+# GApps
+$(call inherit-product-if-exists, vendor/gapps/config.mk)
+
+# PixelStyle
+$(call inherit-product-if-exists, vendor/pixelstyle/config.mk)
+
 # Inherit some common AOSiP stuff.
 TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_GAPPS_ARCH := arm64
+IS_PHONE := true
 $(call inherit-product, vendor/aosip/config/common_full_phone.mk)
 
 PRODUCT_NAME := aosip_whyred
