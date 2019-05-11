@@ -586,4 +586,8 @@
 
     <!-- Should we filter any display modes which are unampped? -->
     <bool name="config_filterDisplayModes">true</bool>
+
+    <!-- Enable qcom fw boost -->
+    <bool name="config_enableQcCpuBoost">true</bool>
+
 </resources>
